@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"build": "tsc -b && vite build",
+		"build": "vite build",
 		"lint": "eslint .",
 		"preview": "vite preview"
 	},
@@ -20,6 +20,9 @@
 		"date-fns": "^4.1.0",
 		"react-router-dom": "^6.27.0",
 		"yup": "^1.4.0"
+	},
+	"engines": {
+		"node": "18.x"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.13.0",
