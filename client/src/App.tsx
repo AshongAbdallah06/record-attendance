@@ -1,8 +1,9 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
 import CheckIn from "./pages/CheckIn";
 import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
+import StudentList from "./pages/StudentList";
 
 const App = () => {
 	return (
@@ -11,18 +12,18 @@ const App = () => {
 			<Routes>
 				<Route
 					path="/"
-					element={<Navigate to="/l/home" />}
-				/>
-				<Route
-					path="/l/home"
 					element={<Home />}
 				/>
 				<Route
-					path="/l/sign-in"
+					path="/lec/home"
+					element={<StudentList />}
+				/>
+				<Route
+					path="/lec/sign-in"
 					element={<SignIn />}
 				/>
 				<Route
-					path="/check-in"
+					path="/std/check-in"
 					element={<CheckIn />}
 				/>
 			</Routes>

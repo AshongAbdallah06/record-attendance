@@ -1,5 +1,5 @@
 const useFunctions = () => {
-	const getStorageItem = (itemName: string, returnItem: null | [] | undefined) => {
+	const getStorageItem = (itemName: string, returnItem: null | [] | undefined | boolean) => {
 		const storedItem = localStorage.getItem(itemName);
 		try {
 			return storedItem ? JSON.parse(storedItem) : returnItem;

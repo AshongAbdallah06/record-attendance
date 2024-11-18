@@ -74,17 +74,21 @@ main {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	padding-top: 0;
+	padding-top: 1rem;
 }
 .list {
 	display: grid;
 	width: 100%;
 	text-align: center;
 	padding: 5px;
-	grid-template-columns: 0.3fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 0.3fr 1fr 1fr 1fr 0.3fr;
 }
 table {
 	width: 100%;
+}
+.empty {
+	text-align: center;
+	margin-top: 2rem;
 }
 
 .check-in {
@@ -101,29 +105,46 @@ table {
 	cursor: pointer;
 	color: white;
 	background-color: rgb(9, 99, 255);
-	width: 100px;
 	white-space: nowrap;
 }
 
 /* form */
 form,
+.form,
 form .group {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 }
+form .shared {
+	display: flex;
+	width: 70%;
+	text-align: center;
+}
+form .shared div {
+	width: 100%;
+}
 form .group {
 	align-items: center;
 	margin-bottom: 2rem;
 	width: 80%;
 }
+form .group.shared {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	margin-bottom: 0;
+}
 form label {
 	margin-bottom: 10px;
 	white-space: nowrap;
 	text-wrap: none;
+	display: block;
 }
-form .group input {
+form .group input,
+form .group div,
+select {
 	width: 100%;
 	/* min-width: 100px; */
 	max-width: 80%;
