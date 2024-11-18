@@ -69,6 +69,9 @@ main {
 	padding: 1rem 2rem;
 	margin-top: 100px;
 }
+main .cont {
+	padding: 1rem 3rem;
+}
 .display-list {
 	display: flex;
 	justify-content: center;

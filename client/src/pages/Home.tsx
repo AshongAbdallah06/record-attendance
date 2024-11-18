@@ -6,7 +6,7 @@ const Home = () => {
 
 	return (
 		<main>
-			<div>
+			<div className="group cont">
 				<p>
 					Lecturers should use this button to register a course. Share the code to your
 					students to record their attendance.
@@ -16,7 +16,7 @@ const Home = () => {
 				</Link>
 			</div>
 
-			<div>
+			<div className="group cont">
 				<p>Students should click on this button to check in into a course.</p>
 				<Link to="/std/check-in">
 					<button>Check In</button>

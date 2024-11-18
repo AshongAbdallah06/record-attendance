@@ -24,6 +24,8 @@ const Context = ({ children }: { children: ReactNode }) => {
 				setLecturerLongitude,
 				lecturerLatitude,
 				setLecturerLatitude,
+				// key,
+				// keyAuthorized,
 			}}
 		>
 			{children}

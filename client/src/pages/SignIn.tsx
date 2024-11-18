@@ -92,9 +92,9 @@ const SignIn = () => {
 				<div className="group">
 					<input
 						type="text"
-						{...register("courseName")}
+						{...register("coursename")}
 					/>
-					<p className="error">{errors && errors.courseName?.message}</p>
+					<p className="error">{errors && errors.coursename?.message}</p>
 				</div>
 
 				<div className="shared">
@@ -104,9 +104,9 @@ const SignIn = () => {
 							<input
 								type="text"
 								maxLength={10}
-								{...register("courseCode")}
+								{...register("coursecode")}
 							/>
-							<p className="error">{errors && errors.courseCode?.message}</p>
+							<p className="error">{errors && errors.coursecode?.message}</p>
 						</div>
 					</div>
 
@@ -133,9 +133,9 @@ const SignIn = () => {
 				<div className="group">
 					<input
 						type="text"
-						{...register("fullName")}
+						{...register("fullname")}
 					/>
-					<p className="error">{errors && errors.fullName?.message}</p>
+					<p className="error">{errors && errors.fullname?.message}</p>
 				</div>
 
 				<div className="group">

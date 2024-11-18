@@ -36,8 +36,8 @@ const CheckIn = () => {
 					const latitude = position.coords.latitude;
 					const longitude = position.coords.longitude;
 
-					newFormInput.lat = Number(latitude.toFixed(2));
-					newFormInput.long = Number(longitude.toFixed(2));
+					newFormInput.lat = Number(latitude);
+					newFormInput.long = Number(longitude);
 
 					try {
 						const res = await Axios.post(
@@ -51,7 +51,6 @@ const CheckIn = () => {
 					} catch (error) {
 						if (error instanceof AxiosError && error.response) {
 							alert(error.response.data);
-							console.log("🚀 ~ formSubmit ~ error:", error.response);
 						} else {
 							console.error("An unexpected error occurred:", error);
 						}

@@ -54,17 +54,16 @@ const StudentList = () => {
 	const lec = getStorageItem("lec", null);
 
 	const [empty, setEmpty] = useState("");
+
+	const fireEvent = () => {
+		getLecturersLocation(lec?.coursecode, lec?.groupid);
+		if (lec?.coursecode && lec?.groupid) {
+			getStudentList(lec?.coursecode, lec?.groupid);
+		}
+	};
 	useEffect(() => {
 		// todo = also check lecturers name and coursename
-		if (lec?.coursecode && lec?.groupid) {
-			getLecturersLocation(lec?.coursecode, lec?.groupid);
-
-			if (lecturerLongitude && lecturerLatitude) {
-				getStudentList(lec?.coursecode, lec?.groupid);
-			} else {
-				setEmpty("Could not get your location.");
-			}
-		}
+		fireEvent();
 	}, []);
 
 	return (
@@ -74,14 +73,7 @@ const StudentList = () => {
 					<div>{lec?.coursecode}</div>
 					<div>GROUP {lec?.groupid}</div>
 
-					<button
-						onClick={() => {
-							if (lec?.coursecode && lec?.groupid)
-								getStudentList(lec?.coursecode, lec?.groupid);
-						}}
-					>
-						Refresh
-					</button>
+					<button onClick={fireEvent}>Refresh</button>
 				</div>
 			</form>
 
@@ -110,8 +102,8 @@ const StudentList = () => {
 										{formatDistanceToNow(student.time, { addSuffix: true })}
 									</td>
 									<td>
-										{lecturerLatitude === student.lat &&
-										lecturerLongitude === student.long
+										{lecturerLatitude === Number(student.lat.toFixed(2)) &&
+										lecturerLongitude === Number(student.long.toFixed(2))
 											? "IN"
 											: "NOT IN"}
 									</td>

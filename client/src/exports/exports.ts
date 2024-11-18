@@ -19,6 +19,8 @@ interface ContextType {
 	setLecturerLatitude: Dispatch<SetStateAction<number>>;
 	lecturerLongitude: number;
 	setLecturerLongitude: Dispatch<SetStateAction<number>>;
+	// key: string;
+	// keyAuthorized: boolean;
 }
 
 export type CheckInType = {
@@ -29,9 +31,9 @@ export type CheckInType = {
 };
 
 export type SignInType = {
-	courseCode: string | null;
-	courseName: string | null;
-	fullName: string | null;
+	coursecode: string | null;
+	coursename: string | null;
+	fullname: string | null;
 };
 export const ContextProvider = createContext<ContextType | undefined>(undefined);
 

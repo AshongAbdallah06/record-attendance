@@ -1,16 +1,16 @@
 import * as yup from "yup";
 
 export const SignInSchema = yup.object().shape({
-	courseCode: yup
+	coursecode: yup
 		.string()
 		.required("This field is required")
 		.matches(/^[A-Za-z]{3,4}-[0-9]{3,4}$/, "Please enter a valid course id"),
-	courseName: yup
+	coursename: yup
 		.string()
 		.required("This field is required")
 		.min(8, "name must be at least 8 characters")
 		.matches(/^[^!@#$%^&*()_+=]+ [A-Za-z ]+$/, "Please enter a valid course name"),
-	fullName: yup
+	fullname: yup
 		.string()
 		.required("This field is required")
 		.min(8, "name must be at least 8 characters")
