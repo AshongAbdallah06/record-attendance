@@ -20,7 +20,9 @@ const StudentList = () => {
 	const getStudentList = async (courseCode: string, groupid: string) => {
 		try {
 			const res = await Axios.get(
-				`http://localhost:8198/std/${courseCode + "-" + groupid.toUpperCase()}`
+				`https://record-attendance.onrender.com:8198/std/${
+					courseCode + "-" + groupid.toUpperCase()
+				}`
 			);
 			const data: StudentType[] = res.data;
 
@@ -37,7 +39,9 @@ const StudentList = () => {
 	const getLecturersLocation = async (courseCode: string, groupid: string) => {
 		try {
 			const res = await Axios.get(
-				`http://localhost:8198/lec/${courseCode + "-" + groupid.toUpperCase()}`
+				`https://record-attendance.onrender.com:8198/lec/${
+					courseCode + "-" + groupid.toUpperCase()
+				}`
 			);
 
 			const { lat, long }: LocationType = res.data;
